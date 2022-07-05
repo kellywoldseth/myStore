@@ -11,16 +11,10 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  //'/assets/data.json'
   getProducts(): Observable<Product[]>
   {
-return this.http.get<Product[]>('assets/data.json')
+    return this.http.get<Product[]>('assets/data.json')
   }
 
-  addProductToCart(product: Product): Observable<Product[]>
-  {
-    this.productList.push(product);
-    return this.http.get<Product[]>('assets/data.json')
-}
 
 }

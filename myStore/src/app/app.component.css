@@ -1,0 +1,34 @@
+ /*layout/header starter CSS provided by Udacity*/
+ .header {
+    text-align: center;
+    background: #33B5E5;
+    color: #fff;
+    padding: 20px;
+    margin:-10px;
+  }
+  
+  /*a css started by Udacity, edited by me*/
+  a {
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none; 
+    font-size: 20px;
+  }
+
+  /*my css*/
+  a:hover
+  {
+    color: #d084db;
+  }
+
+  li{
+    display: inline-block;
+  }
+
+  ul{
+    list-style-position: outside;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }

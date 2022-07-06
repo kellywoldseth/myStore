@@ -13,6 +13,9 @@ If there are any issues: npm link @angular/cli
 # TODO
 
 -fix form validation on cart component.
--make confirmation page say username and dollar amount (need calculateTotal function)
--make products added to cart show up on cart page
--make it so clicking the image details shows correct product
+-concatenation instead of adding when adding a product more than once
+-make confirmation page say username
+-css cart page
+
+-comments and clean up
+-install/run prettier

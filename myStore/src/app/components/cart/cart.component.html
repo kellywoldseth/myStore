@@ -1,3 +1,4 @@
+<!--    form validators are not working-->
 <br><br>
 <div *ngIf="cart.length==0">
     <p class="empty-cart-message">Your cart is empty.</p>
@@ -14,29 +15,29 @@
                 </div>
                 <div class="column2">
                     <p><b>{{product.name}}</b></p>
-                    <p>test</p>
-                    <p><b>${{product.price}}</b></p>
-                    <p><b>${{product.quantity}}</b></p>
+                    <p>${{product.price}}</p>
+                    <p>{{product.quantity}}</p>
                 </div>
             </li>
         </div>  
         </ul>
 
+<p *ngIf="cart.length>0">Total: ${{total}}</p>
 </div>
 
     <div class="column" *ngIf="cart.length>0">  
-        <!-- form validators are not working-->
         <form #form="ngForm" (ngSubmit)="onSubmit()">
             <label>Full Name  </label>
-            <input type=text required minlength="3"  [(ngModel)]="userName">
+            <input type="text" required minlength="3"  [(ngModel)]="username"/>
             <br><br>
             <label>Address  </label>
-            <input type=text required minlength="6" [(ngModel)]="userAddress">
+            <input type="text" required minlength="6" [(ngModel)]="userAddress"/>
             <br><br>
             <label>Credit Card Number  </label>
-            <input type=text placeholder="16-digit number" minlength="16" maxlength="16"required  [(ngModel)]="userCC">
+            <input type="text" placeholder="16-digit number" minlength="16" maxlength="16" required  [(ngModel)]="userCC"/>
             <br><br>
             <button type="submit" [disabled]="form.invalid">Submit</button>
         </form>
+        <button (click)="clearCart()">Clear Cart</button>
     </div>
 </div>

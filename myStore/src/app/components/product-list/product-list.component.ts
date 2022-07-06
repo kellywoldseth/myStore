@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 })
 export class ProductListComponent implements OnInit {
   productList: Product[] = [];
-  item_quantity: number = 0;
+  item_quantity: number = 0; //bound to form
+  
   constructor(private productService: ProductService, private cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
@@ -21,9 +22,7 @@ export class ProductListComponent implements OnInit {
   }
 
   addProductToCart(product: Product): void{
-    this.cartService.addProductToCart(product);
-    //alert("Added to cart!");
-    alert(product.name);
+    this.cartService.addProductToCart(product, this.item_quantity);
   }
 
   displayProductDetails(idnum: number): void{

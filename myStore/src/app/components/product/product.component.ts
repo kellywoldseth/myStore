@@ -13,8 +13,9 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductComponent implements OnInit {
 
 productListFiltered: Product[]= [];
-
 id: number = 0;
+item_quantity: number = 0; //bound to form
+
 
   constructor(private activatedroute:ActivatedRoute, private productService: ProductService, private cartService: CartService, private router: Router) { }
 
@@ -26,8 +27,7 @@ id: number = 0;
 }
 
   addProductToCart(product: Product): void{
-    this.cartService.addProductToCart(product);
-    alert("Added to cart!");
+    this.cartService.addProductToCart(product, this.item_quantity);
   }
 
 

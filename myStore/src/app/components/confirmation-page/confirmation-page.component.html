@@ -1,7 +1,7 @@
 <div class="confPage">
 <h1>Success!</h1>
-<p>Thank you!</p> <!-- add username from cart page, can't figure it out right now-->
-<p>Your order is confirmed.</p> <!-- consider adding total dollar amt here like example-->
+<p>Thank you, {{username}}!</p> <!-- add username from cart page, can't figure it out right now-->
+<p>Your order of ${{total}} is confirmed.</p>
 <p>Please allow 1-3 business day(s) for shipping.</p>
 <button (click)="backToProducts()">Back to Products</button>
 </div>

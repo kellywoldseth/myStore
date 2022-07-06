@@ -1,0 +1,75 @@
+button{
+    background-color: #33B5E5;
+    border-radius: 10px;
+    color:white;
+    border: none;
+    padding: 5px;
+}
+
+li{
+  list-style: none;
+}
+/*css from W3 Schools: https://www.w3schools.com/howto/howto_css_two_columns.asp*/
+.column {
+    float: left;
+    width: 30%;
+  }
+
+  .column2 {
+    float: left;
+    width: 15%;
+  }
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+/*provided by udacity*/
+img {
+    width: 100px;
+    border-radius: 10px;
+  }
+  
+  .form-margin {
+    margin-bottom: 12px;
+  }
+  
+  .cart-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  
+  .cart-item-details {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 80px;
+  }
+  
+  .number-input {
+    width: 80px;
+    text-align: center;
+  }
+  
+  .cart-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 64px;
+  }
+  
+  .cart-panel {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  
+  .empty-cart-message {
+    display: flex;
+    justify-content: center;
+    margin-top: 64px;
+  }
+  

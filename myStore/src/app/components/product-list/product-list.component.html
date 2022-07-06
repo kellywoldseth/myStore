@@ -2,10 +2,10 @@
 <ul>
     <div class="product-index">
     <li *ngFor="let product of productList">
-        <img class="product-image" src =  {{product.url}} (click)="displayProductDetails(product)">
+        <img class="product-image" src =  {{product.url}} (click)="displayProductDetails(product.id)">
         <p><b>{{product.name}}</b></p>
         <p><b>${{product.price}}</b></p>
-        <select id="quantity" class="select-input">
+        <select id="quantity" class="select-input" [(ngModel)]="item_quantity">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

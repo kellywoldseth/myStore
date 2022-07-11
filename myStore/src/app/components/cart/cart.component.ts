@@ -2,8 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { Product } from '../../models/product';
-import { UserService } from 'src/app/services/user.service';
-
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -21,7 +19,6 @@ export class CartComponent implements OnInit {
   constructor(
     private router: Router,
     private cartService: CartService,
-    private userService: UserService
   ) {}
 
   ngOnInit(): void {
@@ -31,6 +28,7 @@ export class CartComponent implements OnInit {
 
   onSubmit(): void {
     this.total = this.cartService.calculateTotal();
+    this.cartService.updateUsername(this.name);
     this.router.navigate(['/confirmation']);
   }
 

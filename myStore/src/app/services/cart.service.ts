@@ -6,6 +6,7 @@ import { Product } from '../models/product';
 export class CartService {
   cart: Product[] = [];
   total: number = 0;
+  username: string = '';
 
   constructor() {}
 
@@ -94,7 +95,14 @@ export class CartService {
     this.total = 0; //reset before every calculation
     for (let i = 0; i < this.cart.length; i++)
       this.total += this.cart[i].price * this.cart[i].quantity;
-    //    alert(`${this.total}`)
     return Math.round(this.total * 100) / 100;
+  }
+
+  updateUsername(str: string): void{
+    this.username=str;
+  }
+
+  getUsername(): string{
+    return this.username;
   }
 }

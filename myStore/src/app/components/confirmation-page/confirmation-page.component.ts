@@ -13,11 +13,12 @@ export class ConfirmationPageComponent implements OnInit {
   username: string = '';
 
   ngOnInit(): void {
-    //this.username = this.cartService.getUsername();
     this.total = this.cartService.calculateTotal();
+    this.username = this.cartService.getUsername();
   }
 
   backToProducts(): void {
+    this.cartService.clearCart();
     this.router.navigate(['']);
   }
 }

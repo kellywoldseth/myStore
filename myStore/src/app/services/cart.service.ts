@@ -98,11 +98,11 @@ export class CartService {
     return Math.round(this.total * 100) / 100;
   }
 
-  updateUsername(str: string): void{
-    this.username=str;
+  updateUsername(str: string): void {
+    this.username = str;
   }
 
-  getUsername(): string{
+  getUsername(): string {
     return this.username;
   }
 }

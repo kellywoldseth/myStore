@@ -78,16 +78,20 @@ export class CartService {
 
    /**
   * @description updates quantity of product from the cart itself
+  * @param product - the product to update
+  * @param quantity - the new quantity
   */
   updateQuantity(product: Product, quantity: number): void{
     this.cart = this.getCart();
     for (let i = 0; i < this.cart.length; i++) {
       let item = this.cart[i];
       if (item.id == product.id) {
-        product.quantity = +product.quantity + +quantity;
+        item.quantity = +item.quantity + +quantity;
           }
         }
     }
+
+
     /**
   * @description calculates total
   * @return total as a dollar amount

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Product} from '../models/product';
 import {Observable} from 'rxjs';
 import { HttpClient } from "@angular/common/http";
+import { NumberSymbol } from '@angular/common';
 
 
 @Injectable({
@@ -29,7 +30,7 @@ export class CartService {
       if(item.id==product.id)
       {
         alreadyInCart = true;
-        product.quantity = product.quantity + quantity;
+        product.quantity =+product.quantity + +quantity;
         alert(`Product already in cart. There are now ${product.quantity} ${product.name}s in cart.`);
       }
     }
@@ -56,7 +57,8 @@ export class CartService {
     let total = 0;
      for(let i =0; i<this.cart.length; i++)
        total+= this.cart[i].price * this.cart[i].quantity;
-     return Math.round(total *100)/100;
+    return Math.round(total *100)/100;
+
    }
 
    getUsername(): string{

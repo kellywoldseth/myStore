@@ -20,7 +20,7 @@ li{
 
 .column2 {
  float: left;
-   width: 50%;
+   width: 100%;
 }
 
 .row:after {
@@ -38,7 +38,8 @@ img {
   .cart-item {
     display: flex;
     flex-direction: row;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+
   }
   
   .cart-item-details {

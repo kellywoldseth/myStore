@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductService } from '../../services/product.service';
 import { CartService } from '../../services/cart.service';
 import { Product } from '../../models/product';
 import { UserService } from 'src/app/services/user.service';
@@ -19,11 +18,10 @@ export class CartComponent implements OnInit {
   userAddress: string = '';
   userCC: string = '';
 
-
   constructor(
     private router: Router,
     private cartService: CartService,
-    private userService: UserService,
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
@@ -34,7 +32,6 @@ export class CartComponent implements OnInit {
   onSubmit(): void {
     this.total = this.cartService.calculateTotal();
     this.router.navigate(['/confirmation']);
-
   }
 
   clearCart(): void {
@@ -42,23 +39,18 @@ export class CartComponent implements OnInit {
     this.cart = [];
     this.total = this.cartService.calculateTotal();
   }
-  
-  removeItem(product: Product): void
-  {
+
+  removeItem(product: Product): void {
     this.cartService.removeItemFromCart(product);
     this.total = this.cartService.calculateTotal();
   }
 
-  updateQuantity(product: Product, quantity: number): void
-  {
+  updateQuantity(product: Product, quantity: number): void {
     this.cartService.updateQuantity(product, quantity);
     this.total = this.cartService.calculateTotal();
   }
 
-  calculateTotal(): void
-  {
+  calculateTotal(): void {
     this.total = this.cartService.calculateTotal();
   }
-
-
 }

@@ -10,7 +10,21 @@ li{
   list-style: none;
 }
 
+.whiteButton
+{
+  width: 60px; 
+  color: #33B5E5; 
+  background-color:white;
+  text-align: left;
+}
 
+button:hover{
+  color: #d084db;
+}
+
+.whiteButton:hover{
+  color: #d084db;
+}
 /*css from W3 Schools: https://www.w3schools.com/howto/howto_css_two_columns.asp*/
 .column {
     float: left;

@@ -1,4 +1,4 @@
- /*layout/header starter CSS provided by Udacity*/
+ /*header css provided by Udacity*/
  .header {
     text-align: center;
     background: #33B5E5;
@@ -7,7 +7,7 @@
     margin:-10px;
   }
   
-  /*a css started by Udacity, edited by me*/
+  /*hyperlink css started by Udacity, edited by me*/
   a {
     color: #ffffff;
     padding: 10px;

@@ -24,10 +24,14 @@ button{
     padding: 5px;
 }
 
-/*css by me*/
+/*my css*/
 li {
     list-style: none;
 }
+
+button:hover{
+    color: #d084db;
+  }
 
 /*provided by udacity and edited by me*/
 .back-link {

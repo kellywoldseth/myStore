@@ -3,6 +3,7 @@
     <p class="empty-cart-message">Your cart is empty.</p>
 </div>
 
+<!--display products in cart-->
 <div class="row">
     <div class="column">
       
@@ -16,7 +17,9 @@
               <br>
                     <p>${{product.price}}</p>
                     <br>
-                    <input style ="border: none; height: 20px;" type="number" value="{{product.quantity}}" min="0" step="1" onchange="calculateTotal()"/>
+                    <input style ="border: none; height: 20px;" type="number" value="{{product.quantity}}" min="0" step="1" name="quantity" (change)="updateQuantity(product, 1)"/>
+                    <br>
+                    <button (click)="removeItem(product)" class="whiteButton">Remove Item</button>
                </div>
               </div>
                <br>
@@ -26,11 +29,11 @@
 
 <p style="margin-left: 20px;" *ngIf="cart.length>0">Total: ${{total}}</p>
 </div>
-
+<!--form for user info-->
     <div class="column" *ngIf="cart.length>0">  
         <form #form="ngForm" (ngSubmit)="onSubmit()">
             <label>Full Name  </label>
-            <input type="text" required minlength="3" [(ngModel)]="username" name="username"/>
+            <input type="text" required minlength="3" [(ngModel)]="name" name="username"/>
             <br><br>
             <label>Address  </label>
             <input type="text" required minlength="6" [(ngModel)]="userAddress" name="useraddress"/>
@@ -42,6 +45,6 @@
             <button type="submit" [disabled]="form.invalid">Submit</button>
             <br><br>
         </form>
-        <button (click)="clearCart()">Clear Cart</button>
+        <button (click)="clearCart()" class="whiteButton">Clear Cart</button>
     </div>
 </div>

@@ -82,7 +82,7 @@ export class CartService {
     for (let i = 0; i < this.cart.length; i++) {
       let item = this.cart[i];
       if (item.id == product.id) {
-        item.quantity = +item.quantity + +quantity;
+        item.quantity = +quantity;
       }
     }
   }

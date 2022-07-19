@@ -40,9 +40,9 @@ export class CartComponent implements OnInit {
     this.total = this.cartService.calculateTotal();
   }
 
-  updateQuantity(product: Product, event: InputEvent): void {
+  updateQuantity(product: Product, event: Event): void {
     //const q = document.getElementById('quant');
-    const q: HTMLInputElement = event.target;
+    const q: HTMLInputElement = <HTMLInputElement>event.target;
     const qnum: number = q.valueAsNumber;
     this.cartService.updateQuantity(product, qnum);
     this.total = this.cartService.calculateTotal();

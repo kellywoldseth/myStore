@@ -17,7 +17,7 @@
               <br>
                     <p>${{product.price}}</p>
                     <br>
-                    <input style ="border: none; height: 20px;" type="number" value="{{product.quantity}}" min="0" step="1" id="quant" name="quantity" change="updateQuantity(product, $event)" />
+                    <input style ="border: none; height: 20px;" type="number" value="{{product.quantity}}" min="0" step="1" id="quant" name="quantity" (change)="updateQuantity(product, $event)" />
                     <br>
                     <button (click)="removeItem(product)" class="whiteButton">Remove Item</button>
                </div>
